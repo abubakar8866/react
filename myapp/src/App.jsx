@@ -1,6 +1,8 @@
 import People from "./people";
 import Home from "./home"
 import Car from "./car";
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
+import "./index.css";
 
 
 function people(name,rollno,city,course,university){
@@ -9,7 +11,7 @@ function people(name,rollno,city,course,university){
     this.city = city,
     this.course = course,
     this.university = university
-  };
+};
 
 function App() {
   let name = "Abubakar";
@@ -17,9 +19,13 @@ function App() {
   let p1 = new people("Abubakar",12,"Ahmedabad","MCA","GLS");
   return (
     <>
-      <Home n={name}/>
-      <Car car={c}></Car>
-      <People p={p1}></People>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home n={name}/>}></Route>
+          <Route path="/car" element={<Car car={c}></Car>}></Route>
+          <Route path="/people" element={<People p={p1}></People>}></Route>
+        </Routes>
+      </Router>
     </>
   )
 }
