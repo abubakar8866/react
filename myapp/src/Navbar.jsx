@@ -7,6 +7,7 @@ function Navbar() {
       <Link to="/people" className="font-semibold">People</Link>
       <Link to="/car" className="font-semibold">Car</Link>
       <Link to="/state" className="font-semibold">State</Link>
+      <Link to="/crud" className="font-semibold">Crud</Link>
     </div>
   );
 }

@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
 
 import ThemeProvider from "./use";
+import Crud from "./crud";
 
 function people(name, rollno, city, course, university) {
   this.name = name;
@@ -32,6 +33,7 @@ function App() {
           <Route path="/car" element={<Car car={c} />} />
           <Route path="/people" element={<People p={p1} />} />
           <Route path="/state" element={<State />} />
+          <Route path="/crud" element={<Crud />} />
         </Routes>
       </Router>
     </ThemeProvider>
