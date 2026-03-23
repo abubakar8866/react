@@ -8,6 +8,8 @@ function Navbar() {
       <Link to="/car" className="font-semibold">Car</Link>
       <Link to="/state" className="font-semibold">State</Link>
       <Link to="/crud" className="font-semibold">Crud</Link>
+      <Link to="/axios" className="font-semibold">Products</Link>
+      <Link to="/cart" className="font-semibold">Cart</Link>
     </div>
   );
 }

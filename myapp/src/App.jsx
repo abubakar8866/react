@@ -3,6 +3,10 @@ import Home from "./home";
 import Car from "./car";
 import State from "./states";
 import Navbar from "./Navbar";
+import { Provider } from "react-redux";
+import store from "./store";
+import Axios from "./axios";
+import Cart from "./cart";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
@@ -24,19 +28,23 @@ function App() {
   let p1 = new people("Abubakar", 12, "Ahmedabad", "MCA", "GLS");
 
   return (
-    <ThemeProvider>
-      <Router>
-        <Navbar />
+    <Provider store={store}>
+      <ThemeProvider>
+        <Router>
+          <Navbar />
 
-        <Routes>
-          <Route path="/" element={<Home n={name} />} />
-          <Route path="/car" element={<Car car={c} />} />
-          <Route path="/people" element={<People p={p1} />} />
-          <Route path="/state" element={<State />} />
-          <Route path="/crud" element={<Crud />} />
-        </Routes>
-      </Router>
-    </ThemeProvider>
+          <Routes>
+            <Route path="/" element={<Home n={name} />} />
+            <Route path="/car" element={<Car car={c} />} />
+            <Route path="/people" element={<People p={p1} />} />
+            <Route path="/state" element={<State />} />
+            <Route path="/crud" element={<Crud />} />
+            <Route path="/axios" element={<Axios />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </Router>
+      </ThemeProvider>
+    </Provider>
   );
 }
 

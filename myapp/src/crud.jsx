@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Data } from "./data";
+import { ThemeContext } from "./ThemeContext";
 
 function Crud() {
     const [data, setData] = useState(Data);
@@ -11,6 +12,7 @@ function Crud() {
         city: ""
     });
     const [isEdit, setIsEdit] = useState(false);
+    const {theme} = useContext(ThemeContext);
 
     //Handle Input Change
     const handleChange = (e) => {
@@ -55,7 +57,7 @@ function Crud() {
     };
 
     return (
-        <div>
+        <div className={`${theme=="light"?"bg-white text-black":"bg-black text-white"}`}>
             <h2>CRUD App</h2>
 
             {/* FORM */}
